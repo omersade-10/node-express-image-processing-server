@@ -4,12 +4,10 @@ const path = require('path');
 
 const app = express();
 
-const pathjToIndex = path.resolve(__dirname, '../client/index.html');
+const pathToIndex = path.resolve(__dirname, '../client/index.html');
 
-module.exports = {
-    app: app
-};
+module.exports = app;
 
 app.use('/*', (request, response) => {
-    response.sendFile(pathjToIndex);
+    response.sendFile(pathToIndex);
 });
